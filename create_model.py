@@ -14,6 +14,11 @@ if __name__ == "__main__":
     split = test.shape[1] - 1
     
 def get_X_and_Y(data, D=10):
+    """gets window for training data
+
+    Returns:
+        (df,array): training data
+    """
     values = np.array([row[1] for row in data])
     X = np.column_stack([np.ones(len(values) - D)] + 
                         [values[i:len(values)-D+i] for i in range(D)])
