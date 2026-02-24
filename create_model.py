@@ -5,13 +5,12 @@ import sys
 from sklearn.linear_model import LinearRegression
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python create_model.py <train.csv> <test.csv>")
-        sys.exit(1)
-    train = pd.read_csv(sys.argv[1])
-    
-    test = pd.read_csv(sys.argv[2])
-    split = test.shape[1] - 1
+    series = np.load(f"series/W{sys.argv[1]}.npy")
+    train_X, train_y = get_X_and_Y(series, D)
+    model = LinearRegression()
+    model.fit(train_X, train_y)
+    mse = mean_squared_error(y, preds)
+    print(f"W{idx}, MSE: {mse}")
     
 def get_X_and_Y(data, D=10):
     """gets window for training data
@@ -19,8 +18,6 @@ def get_X_and_Y(data, D=10):
     Returns:
         (df,array): training data
     """
-    values = np.array([row[1] for row in data])
-    X = np.column_stack([np.ones(len(values) - D)] + 
-                        [values[i:len(values)-D+i] for i in range(D)])
+    X = np.column_stack([data[i:len(data)-D+i] for i in range(D)])
     Y = values[D:]
     return X, Y
