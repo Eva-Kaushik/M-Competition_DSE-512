@@ -16,7 +16,7 @@ echo "Task ID: $SLURM_ARRAY_TASK_ID"
 echo "Timestamp: $(date)"
 echo "Hostname: $(hostname)"
 echo "Processing series: W${SLURM_ARRAY_TASK_ID}"
-
-apptainer exec container.sif python3 create_model.py $SLURM_ARRAY_TASK_ID
+mkdir -p logs
+apptainer exec container.sif python3 create_model.py $SLURM_ARRAY_TASK_ID 10
 
 echo "Timestamp: $(date)"
