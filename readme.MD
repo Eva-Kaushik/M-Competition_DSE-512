@@ -1,6 +1,6 @@
 To run:
 
-1st. check file paths in preprocess.slurm are correct (line 18), which of the m4 sets chosen shouldn't matter
+1st. check file paths in preprocess.slurm are correct (line 18), which of the m4 sets chosen shouldn't matter but weekly is what I used
 
 2nd. run preprocess.slurm
 
