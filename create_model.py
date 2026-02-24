@@ -26,5 +26,6 @@ if __name__ == "__main__":
     model = LinearRegression()
     model.fit(train_X, train_y)
     preds = model.predict(train_X)
-    mse = mean_squared_error(y, preds)
-    print(f"W{sys.argv[1]}, MSE Train: {mse}")
+    mse = mean_squared_error(train_y, preds)
+    print(f"W{sys.argv[1]}, MSE: {mse}")
+    
