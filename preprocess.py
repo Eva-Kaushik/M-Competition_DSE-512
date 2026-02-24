@@ -19,6 +19,6 @@ if __name__ == "__main__":
     os.makedirs("series", exist_ok=True)
     for i in range(numRows):
         series = train.iloc[i, 1:].dropna().values
-        np.save(f"series/W{i}.npy", series.astype(float))
+        np.save(f"series/W{i}_Train.npy", series.astype(float))
         
     
