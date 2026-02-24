@@ -3,15 +3,6 @@ import pandas as pd
 import os
 import sys
 
-def get_X_and_Y(data, D=10):
-    """gets window for training data
-
-    Returns:
-        (df,array): training data
-    """
-    X = np.column_stack([values[i:len(data)-D+i] for i in range(D)])
-    Y = values[D:]
-    return X, Y
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
