@@ -18,3 +18,5 @@ echo "Hostname: $(hostname)"
 echo "Processing series: W${SLURM_ARRAY_TASK_ID}"
 
 apptainer exec container.sif python3 train.py $SLURM_ARRAY_TASK_ID
+
+echo "Timestamp: $(date)"
