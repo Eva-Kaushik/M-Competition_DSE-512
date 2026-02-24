@@ -18,8 +18,8 @@ def get_X_and_Y(data, D=10):
 if __name__ == "__main__":
     series = np.load(f"series/W{sys.argv[1]}.npy")
     if not sys.argv[2].isdigit():
-        print("numRows must be an int")
-        print("Usage: <train> <numRows>")
+        print("numX's must be an int")
+        print("Usage: <train> <numX's>")
         sys.exit(1)
     D = int(sys.argv[2])
     train_X, train_y = get_X_and_Y(series, D)
