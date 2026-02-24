@@ -11,14 +11,14 @@ if __name__ == "__main__":
     train = pd.read_csv(sys.argv[1])
     
     test = pd.read_csv(sys.argv[2])
-    if not sys.argv[3].isDigit():
+    if not sys.argv[3].isdigit():
         print("numRows must be numeric")
         sys.exit(1)
-    numRows = sys.argv[3]
+    numRows = int(sys.argv[3])
     h = test.shape[1] - 1
     os.makedirs("series", exist_ok=True)
     for i in range(numRows):
         series = train.iloc[i, 1:].dropna().values
-        np.save(f"series/W{i}.npy", series)
+        np.save(f"series/W{i}.npy", series.astype(float))
         
     
