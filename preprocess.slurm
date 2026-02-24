@@ -15,6 +15,6 @@ echo "Timestamp: $(date)"
 echo "Hostname: $(hostname)"
 echo "directory $(pwd)"
 
-apptainer exec container.sif python3 preprocess.py "/nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-train.csv" "/nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-test.csv"
+apptainer exec container.sif python3 preprocess.py "/nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-train.csv" "/nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-test.csv" 10
 
 echo "Timestamp: $(date)"
