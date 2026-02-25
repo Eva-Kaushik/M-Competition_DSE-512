@@ -11,9 +11,12 @@
 #SBATCH --mem=1G
 set -euo pipefail
 
+echo "Task ID: $SLURM_ARRAY_TASK_ID"
 echo "Timestamp: $(date)"
 echo "Hostname: $(hostname)"
-echo "directory $(pwd)"
+echo "train file: /nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive"
+echo "test file: /nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-test.csv"
+echo "num rows: 10"
 
 apptainer exec container.sif python3 preprocess.py "/nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-train.csv" "/nfs/home/gflanag4/M-Competition_DSE-512/dataset/archive 3/Weekly-test.csv" 10
 
