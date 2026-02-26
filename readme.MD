@@ -7,4 +7,4 @@ To run:
 3rd run models.slurm
 
 
-Right now we just get MSE on the train set, I think that is enough for the purpouses of this project
+Right now we just get MSE on the train set, I think that is enough for the purpose of this project
